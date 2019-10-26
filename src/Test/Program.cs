@@ -6,28 +6,32 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            string s = "aba";
-            long n = 10;
+            int[] arr = new int[] { 4, 3, 1, 2 };
+            int swap = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                while (arr[i] != i + 1)
+                {
+                    var temp = arr[arr[i] - 1];
+                    arr[arr[i] - 1] = arr[i];
+                    arr[i] = temp;
+                    swap += 1;
+                }
+            }
 
-
-            char[] c = s.ToCharArray();
-            long a = 0;
-
-            long repeat = n / s.Length;
-            long rest = n % s.Length;
-
-            for (int i = 0; i < c.Length; i++)
-                if (c[i] == 'a')
-                    a++;
-
-            long ar = 0;
-            for (int j = 0; j < rest; j++)
-                if (c[j] == 'a')
-                    ar++;
-
-            long result = a * repeat + ar;
-
-            Console.WriteLine(result);
+            Console.WriteLine(swap);
         }
     }
 }
+
+
+//   int ans = 0;
+//     for (int i = q.size() - 1; i >= 0; i--) {
+//         if (q[i] - (i + 1) > 2) {
+//             cout << "Too chaotic" << endl;
+//             return;
+//         }
+//         for (int j = max(0, q[i] - 2); j < i; j++)
+//             if (q[j] > q[i]) ans++;
+//     }
+//     cout << ans << endl;
