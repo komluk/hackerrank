@@ -23,10 +23,6 @@ namespace DataStructures
                 int count = strings.Count(x => x == queries[i]);
                 ar[i] = count;
             }
-
-            // Assert.Equals(2, ar[0]);
-            // Assert.Equals(1, ar[1]);
-            // Assert.Equals(0, ar[2]);
         }
 
         [Fact]
